@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erina Zerlindah | Software Engineer Portfolio</title>
+  <meta name="description" content="Portofolio Software Engineer Erina Zerlindah - Mahasiswa D3 Teknik Telekomunikasi PENS dengan fokus pada logika backend, Python, dan rekayasa perangkat lunak.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom glow & scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #14b8a6;
+    }
+    .mesh-gradient {
+      background-image: radial-gradient(at 10% 20%, rgba(20, 184, 166, 0.12) 0px, transparent 50%),
+                        radial-gradient(at 90% 80%, rgba(59, 130, 246, 0.1) 0px, transparent 50%);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans selection:bg-brand-500 selection:text-white antialiased min-h-screen flex flex-col">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          EZ
+        </div>
+        <span class="font-bold text-lg text-white tracking-tight group-hover:text-brand-400 transition-colors">Erina Zerlindah</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+        <a href="#about" class="hover:text-white transition-colors">Tentang</a>
+        <a href="#skills" class="hover:text-white transition-colors">Keterampilan</a>
+        <a href="#projects" class="hover:text-white transition-colors">Proyek</a>
+        <a href="#experience" class="hover:text-white transition-colors">Pengalaman</a>
+        <a href="#education" class="hover:text-white transition-colors">Pendidikan</a>
+        <a href="#contact" class="hover:text-white transition-colors">Kontak</a>
+      </nav>
+
+      <!-- CTA Nav -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#contact" class="px-4 py-2 text-xs font-semibold rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/30 hover:bg-brand-500 hover:text-white transition-all shadow-sm">
+          Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-5 space-y-2">
+      <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Tentang</a>
+      <a href="#skills" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Keterampilan</a>
+      <a href="#projects" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Proyek</a>
+      <a href="#experience" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Pengalaman</a>
+      <a href="#education" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800">Pendidikan</a>
+      <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-brand-400 hover:bg-slate-800">Kontak</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow pt-16">
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative py-20 lg:py-28 mesh-gradient overflow-hidden border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Status Pill -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs font-medium text-slate-300 mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>D3 Teknik Telekomunikasi • PENS Surabaya</span>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-8 space-y-5">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Software Engineer
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-400 text-2xl sm:text-3xl lg:text-4xl mt-1">
+                Fokus pada Logika Backend & Python
+              </span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed">
+              Halo, saya <span class="text-white font-semibold">Erina Zerlindah</span>. Mahasiswa Teknik Telekomunikasi di Politeknik Elektronika Negeri Surabaya (PENS) yang berfokus membangun solusi perangkat lunak terstruktur, efisien, dan berlandaskan pemahaman sistem yang kuat.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-3">
+              <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-600 text-white font-medium text-sm transition-all shadow-lg shadow-brand-500/25">
+                <i data-lucide="code" class="w-4 h-4"></i>
+                Lihat Proyek Saya
+              </a>
+              <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium text-sm border border-slate-700 transition-all">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                Hubungi Saya
+              </a>
+              <button id="copy-email-hero-btn" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white font-mono text-xs border border-slate-800 transition-all" title="Klik untuk salin email">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span id="hero-email-text">zerlindah123@gmail.com</span>
+              </button>
+            </div>
+
+            <!-- Tech Highlights -->
+            <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+              <span class="text-slate-500 font-medium uppercase tracking-wider">Teknologi Utama:</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-brand-400 font-mono font-medium">Python</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-blue-400 font-mono font-medium">Java</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-amber-400 font-mono font-medium">C / C++ (Arduino)</span>
+              <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-purple-400 font-mono font-medium">NI Multisim</span>
+            </div>
+          </div>
+
+          <!-- Highlight Card -->
+          <div class="lg:col-span-4">
+            <div class="p-6 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-slate-800 shadow-xl space-y-4 relative">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs text-slate-400">
+                <span class="font-mono text-brand-400">// Rekap Profil</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-medium">Open to Opportunity</span>
+              </div>
+              <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+                  <span>D3 Teknik Telekomunikasi - PENS</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="target" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+                  <span>Target: Software Engineer / Backend</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="cpu" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+                  <span>Pendekatan Rekayasa Sistem & Logika Hardware</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0"></i>
+                  <span>Surabaya, Indonesia</span>
+                </li>
+              </ul>
+              <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 text-xs text-slate-400">
+                <span class="text-brand-400 font-semibold">Tagline:</span> "Membangun logika perangkat lunak yang terstruktur dan efisien berlandaskan pemahaman sistem yang kuat."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-2 text-brand-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="user" class="w-4 h-4"></i>
+            <span>01. Profil</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Tentang Saya</h2>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+          <div class="md:col-span-8 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p>
+              Saya adalah mahasiswa D3 Teknik Telekomunikasi di <strong class="text-white font-medium">Politeknik Elektronika Negeri Surabaya (PENS)</strong> yang memiliki ketertarikan mendalam pada rekayasa perangkat lunak, khususnya pengembangan sistem backend dan aplikasi berbasis logika data.
+            </p>
+            <p>
+              Kurikulum praktik yang intensif di PENS membentuk pola pikir saya dalam membedah sistem dari tingkat paling mendasar—mulai dari transmisi sinyal dan perilaku perangkat keras, hingga implementasi kode komputasi tingkat tinggi. Saya menyukai tantangan dalam merancang algoritma yang efisien, mengelola alur filtrasi data, dan menyusun program yang modular untuk menyelesaikan kendala nyata pengguna.
+            </p>
+            <p class="text-slate-400 text-sm">
+              Saat ini, saya mendalami bahasa <strong>Python</strong> sebagai fondasi utama pengembangan backend, didukung pemahaman pemrograman berorientasi objek (OOP) melalui <strong>Java</strong> serta logika sekuensial mikrokontroler dengan <strong>C/C++ Arduino</strong>.
+            </p>
+          </div>
+
+          <div class="md:col-span-4 space-y-3">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <span class="text-xs font-mono text-brand-400">01 / Logika Sistem</span>
+              <h3 class="text-sm font-semibold text-white">Algoritma & Aliran Data</h3>
+              <p class="text-xs text-slate-400">Terbiasa merancang logika kondisional terstruktur dan validasi alur keputusan program.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <span class="text-xs font-mono text-brand-400">02 / Engineering Mindset</span>
+              <h3 class="text-sm font-semibold text-white">Fondasi Hardware-ke-Software</h3>
+              <p class="text-xs text-slate-400">Kemampuan menghubungkan alur kerja fisik mikrokontroler dengan pemrograman logis.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <span class="text-xs font-mono text-brand-400">03 / Ketelitian Praktikum</span>
+              <h3 class="text-sm font-semibold text-white">Hasil Berbasis Pengujian</h3>
+              <p class="text-xs text-slate-400">Setiap proyek melalui tahapan simulasi skematik dan pengujian langsung secara nyata.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 border-b border-slate-800/60 bg-slate-900/20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-2 text-brand-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>02. Keterampilan</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Keahlian & Alat</h2>
+          <p class="text-slate-400 text-sm mt-1">Pengelompokan keterampilan teknis yang saya kuasai dan implementasikan dalam berbagai proyek.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Programming Languages -->
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                <i data-lucide="code-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Programming Languages</h3>
+                <span class="text-xs text-slate-400">Bahasa Pemrograman Utama</span>
+              </div>
+            </div>
+            
+            <ul class="space-y-2.5 pt-2 text-sm">
+              <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/80">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+                  <span class="text-white font-medium">Python</span>
+                </div>
+                <span class="text-xs text-brand-400 font-mono">Fokus Backend</span>
+              </li>
+              <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/80">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                  <span class="text-white font-medium">Java</span>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">OOP / Desktop</span>
+              </li>
+              <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/80">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                  <span class="text-white font-medium">C / C++ (Arduino)</span>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">Embedded Logic</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tools & Simulation -->
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Tools & Prototyping</h3>
+                <span class="text-xs text-slate-400">Pengujian & Lingkungan Kerja</span>
+              </div>
+            </div>
+            
+            <ul class="space-y-2.5 pt-2 text-sm">
+              <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/80">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="text-white font-medium">Arduino IDE</span>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">Firmware DEV</span>
+              </li>
+              <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/80">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                  <span class="text-white font-medium">NI Multisim</span>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">Simulasi Sirkuit</span>
+              </li>
+              <li class="flex items-center justify-between p-2 rounded bg-slate-950/60 border border-slate-800/80">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                  <span class="text-white font-medium">Breadboard Testing</span>
+                </div>
+                <span class="text-xs text-slate-400 font-mono">Validasi Fisik</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Next Learning Curve (Transparent roadmap) -->
+          <div class="p-6 rounded-2xl bg-slate-900/40 border border-dashed border-slate-700/80 space-y-4 sm:col-span-2 lg:col-span-1">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                <i data-lucide="compass" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-white">Eksplorasi Lanjutan</h3>
+                <span class="text-xs text-slate-400">Fokus Pembelajaran Aktif</span>
+              </div>
+            </div>
+            
+            <div class="space-y-2.5 pt-2 text-xs text-slate-400">
+              <div class="p-2.5 rounded bg-slate-950/40 border border-slate-800">
+                <span class="text-slate-300 font-medium block text-sm">Arsitektur Backend & API</span>
+                <span class="text-slate-500">Mendalami konsep RESTful API dan routing framework berbasis Python (FastAPI/Flask).</span>
+              </div>
+              <div class="p-2.5 rounded bg-slate-950/40 border border-slate-800">
+                <span class="text-slate-300 font-medium block text-sm">Manajemen Basis Data</span>
+                <span class="text-slate-500">Mempelajari perancangan skema relasional, SQL query, dan pemodelan data.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <div class="flex items-center gap-2 text-brand-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+              <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+              <span>03. Portofolio Proyek</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Karya & Tugas Akhir Semester</h2>
+            <p class="text-slate-400 text-sm mt-1">Bukti kemampuan logika pemrograman dan implementasi sistem perangkat keras.</p>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="inline-flex p-1 rounded-xl bg-slate-900 border border-slate-800 text-xs">
+            <button class="filter-btn active px-3 py-1.5 rounded-lg bg-brand-500 text-white font-medium transition-all" data-filter="all">Semua (5)</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all" data-filter="software">Software (1)</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all" data-filter="embedded">Embedded (2)</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all" data-filter="telecom">Telekomunikasi (2)</button>
+          </div>
+        </div>
+
+
+        <!-- FEATURED PROJECT 1: JAVA FOOD RECOMMENDER WITH INTERACTIVE SIMULATOR -->
+        <div class="project-card mb-12" data-category="software">
+          <div class="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border-2 border-brand-500/40 p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+            
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-semibold flex items-center gap-1.5">
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-brand-400"></i> Proyek Unggulan Software
+                </span>
+                <span class="text-xs font-mono text-slate-400">Java • Desktop Application</span>
+              </div>
+              <span class="text-xs text-slate-400">Tugas Akhir Semester</span>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+              
+              <div class="lg:col-span-7 space-y-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  Aplikasi Rekomendasi Makanan di Gebang Berbasis Budget
+                </h3>
+                
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  Aplikasi desktop interaktif berbasis Java yang membantu mahasiswa di kawasan sekitar kampus PENS (Gebang) menemukan rekomendasi makanan terbaik sesuai batas nominal uang saku mereka.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-3 pt-2 text-xs">
+                  <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <span class="text-brand-400 font-semibold block mb-1">Masalah (Problem)</span>
+                    <p class="text-slate-400">Mahasiswa sering bingung memilih menu makan yang pas tanpa melebihi budget harian yang tersedia.</p>
+                  </div>
+                  <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <span class="text-brand-400 font-semibold block mb-1">Solusi (Solution)</span>
+                    <p class="text-slate-400">Algoritma filtrasi kondisi yang menyaring data harga dan menampilkan <strong>Top 3</strong> opsi makanan terbaik secara instan.</p>
+                  </div>
+                </div>
+
+                <div class="space-y-1.5 text-xs text-slate-300 pt-1">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                    <span><strong>Peran Saya:</strong> Pengembang tunggal (Merancang alur logika seleksi dan antarmuka pengguna).</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                    <span><strong>Hasil:</strong> Berhasil menampilkan top 3 opsi makanan akurat sesuai nominal rupiah yang diinputkan.</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span class="px-2.5 py-1 rounded bg-slate-800 text-brand-300 font-mono text-xs">Java</span>
+                  <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono text-xs">Algoritma Filtrasi</span>
+                  <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono text-xs">Logika Kondisional</span>
+                  <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono text-xs">GUI Desktop</span>
+                </div>
+              </div>
+
+              <!-- Interactive Demo Widget -->
+              <div class="lg:col-span-5 bg-slate-950 rounded-xl border border-slate-800 p-5 space-y-4 shadow-inner">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="play-circle" class="w-4 h-4 text-brand-400"></i>
+                    <span class="text-xs font-mono font-bold text-white uppercase">Simulasi Logika Aplikasi</span>
+                  </div>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-brand-500/20 text-brand-400 font-mono">Live Widget</span>
+                </div>
+
+                <p class="text-xs text-slate-400">
+                  Uji coba logika filtrasi budget kuliner Gebang seperti pada program Java asli:
+                </p>
+
+                <div class="space-y-2">
+                  <label for="budget-input" class="text-xs text-slate-300 font-medium block">
+                    Masukkan Budget Anda (Rp):
+                  </label>
+                  <div class="flex gap-2">
+                    <input 
+                      type="number" 
+                      id="budget-input" 
+                      placeholder="Contoh: 15000" 
+                      value="15000"
+                      class="flex-1 px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-brand-400 font-mono"
+                    >
+                    <button 
+                      id="btn-run-recommendation" 
+                      class="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg text-xs font-semibold transition-all"
+                    >
+                      Cari Top 3
+                    </button>
+                  </div>
+                  
+                  <!-- Quick Preset Buttons -->
+                  <div class="flex items-center gap-1.5 pt-1 text-[11px] text-slate-400">
+                    <span>Pilihan Cepat:</span>
+                    <button class="preset-btn px-2 py-0.5 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800" data-amount="10000">10rb</button>
+                    <button class="preset-btn px-2 py-0.5 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800" data-amount="15000">15rb</button>
+                    <button class="preset-btn px-2 py-0.5 rounded bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800" data-amount="25000">25rb</button>
+                  </div>
+                </div>
+
+                <!-- Simulation Output -->
+                <div class="mt-3 pt-3 border-t border-slate-800 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-400 font-mono">Output: Top 3 Rekomendasi Gebang</span>
+                    <span id="result-status" class="text-emerald-400 font-mono text-[11px]">3 Ditemukan</span>
+                  </div>
+
+                  <div id="food-results" class="space-y-1.5 text-xs">
+                    <!-- Populated by JavaScript -->
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- OTHER 4 PROJECTS GRID -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- PROJECT 2: KONTROL 7-SEGMENT ARDUINO -->
+          <div class="project-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 space-y-4 hover:border-slate-700 transition-all" data-category="embedded">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-1 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 font-mono">
+                Embedded / Arduino
+              </span>
+              <span class="text-slate-400">Tugas Akhir Semester</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white tracking-tight">
+              Kontrol Display 7-Segment dengan Arduino
+            </h3>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Program otomasi tampilan karakter angka digital pada seven segment menggunakan mikrokontroler Arduino untuk demonstrasi manipulasi logika output digital.
+            </p>
+
+            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-1 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Logika:</strong> Pemetaan pin segmen (A-G) dan fungsi delay counter.</div>
+              <div><strong class="text-slate-200">Peran:</strong> Menulis kode logika kendali & perakitan display breadboard.</div>
+              <div><strong class="text-slate-200">Hasil:</strong> Display berhasil menampilkan urutan angka secara otomatis dan presisi.</div>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-mono text-[11px]">Arduino IDE</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">C/C++</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">7-Segment Display</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Breadboard</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: ANTARMUKA MIKROKONTROLER DENGAN SAKLAR -->
+          <div class="project-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 space-y-4 hover:border-slate-700 transition-all" data-category="embedded">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono">
+                Digital I/O Interface
+              </span>
+              <span class="text-slate-400">Tugas Akhir Semester</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white tracking-tight">
+              Antarmuka Mikrokontroler dengan Saklar Input
+            </h3>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Sistem kendali pembacaan status digital input tombol/saklar mekanik untuk memicu perintah logika komputasi pada mikrokontroler Arduino.
+            </p>
+
+            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-1 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Logika:</strong> Deteksi perubahan logika status tombol (High/Low logic).</div>
+              <div><strong class="text-slate-200">Peran:</strong> Penulisan program pembacaan pin digital dan perakitan saklar input.</div>
+              <div><strong class="text-slate-200">Hasil:</strong> Sistem membaca input saklar secara konsisten tanpa kesalahan status.</div>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-cyan-300 font-mono text-[11px]">Arduino IDE</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Digital Read</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Saklar Mekanik</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Breadboard</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: IMPLEMENTASI SEVEN SEGMENT MULTISIM -->
+          <div class="project-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 space-y-4 hover:border-slate-700 transition-all" data-category="telecom">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 text-purple-300 border border-purple-500/20 font-mono">
+                Simulasi Sirkuit & Logika
+              </span>
+              <span class="text-slate-400">Tugas Akhir Semester</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white tracking-tight">
+              Implementasi Rangkaian Logika Seven Segment
+            </h3>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Perancangan skema sirkuit tampilan seven segment menggunakan software simulasi NI Multisim yang divalidasi dengan perakitan fisik di breadboard.
+            </p>
+
+            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-1 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Metode:</strong> Pemodelan skema skematik di Multisim disusul perakitan fisik.</div>
+              <div><strong class="text-slate-200">Peran:</strong> Perancang skematik simulasi dan perakit sirkuit breadboard.</div>
+              <div><strong class="text-slate-200">Hasil:</strong> Display menyala menampilkan karakter angka sesuai rancangan skema.</div>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300 font-mono text-[11px]">NI Multisim</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Rangkaian Logika</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Seven Segment</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Breadboard</span>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: TRANSMISI AUDIO INDUKSI MAGNETIK -->
+          <div class="project-card rounded-2xl bg-slate-900/80 border border-slate-800 p-6 space-y-4 hover:border-slate-700 transition-all" data-category="telecom">
+            <div class="flex items-center justify-between text-xs">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-mono">
+                Sistem Transmisi Sinyal
+              </span>
+              <span class="text-slate-400">Tugas Akhir Semester</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white tracking-tight">
+              Sistem Transmisi Audio Berbasis Induksi Magnetik
+            </h3>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Eksperimen transmisi sinyal analog nirkabel jarak dekat menggunakan prinsip kopling induksi elektromagnetik antar kumparan kawat.
+            </p>
+
+            <div class="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-1 text-xs text-slate-400">
+              <div><strong class="text-slate-200">Metode:</strong> Simulasi modulasi/penguatan di Multisim dan perakitan modul lilitan.</div>
+              <div><strong class="text-slate-200">Peran:</strong> Perancang sirkuit simulasi dan perakit pemancar-penerima fisik.</div>
+              <div><strong class="text-slate-200">Hasil:</strong> Sinyal suara berhasil ditransmisikan dan didengar pada sisi penerima.</div>
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300 font-mono text-[11px]">NI Multisim</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Elektronika Analog</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Induksi Magnetik</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-mono text-[11px]">Breadboard</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- EXPERIENCE SECTION (ACADEMIC PROJECTS TIMELINE) -->
+    <section id="experience" class="py-20 border-b border-slate-800/60 bg-slate-900/20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-2 text-brand-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            <span>04. Pengalaman</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Rekam Jejak Proyek Akademik</h2>
+          <p class="text-slate-400 text-sm mt-1">Konsistensi dalam menyelesaikan proyek praktikum dan tugas akhir tiap semester di PENS.</p>
+        </div>
+
+        <div class="space-y-6 max-w-4xl">
+          
+          <!-- Timeline Item 1 -->
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 relative pl-8 sm:pl-10">
+            <div class="absolute left-3.5 sm:left-4 top-7 w-2.5 h-2.5 rounded-full bg-brand-400 ring-4 ring-slate-900"></div>
+            
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-base font-bold text-white">Pengembangan Aplikasi Komputasi & Logika Data (Java)</h3>
+              <span class="text-xs font-mono text-brand-400 px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/20">Semester Akhir Terkini</span>
+            </div>
+            <p class="text-xs text-slate-400 mb-2">Politeknik Elektronika Negeri Surabaya (PENS)</p>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Merancang dan menyelesaikan aplikasi desktop rekomendasi makanan di Gebang. Bertanggung jawab penuh pada penulisan struktur logika, filtrasi rentang budget pengguna, dan penyajian 3 opsi terbaik.
+            </p>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 relative pl-8 sm:pl-10">
+            <div class="absolute left-3.5 sm:left-4 top-7 w-2.5 h-2.5 rounded-full bg-blue-400 ring-4 ring-slate-900"></div>
+            
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-base font-bold text-white">Pemrograman Mikrokontroler & Sistem Antarmuka Digital</h3>
+              <span class="text-xs font-mono text-slate-400 px-2 py-0.5 rounded bg-slate-800">Proyek Semester Praktikum</span>
+            </div>
+            <p class="text-xs text-slate-400 mb-2">Politeknik Elektronika Negeri Surabaya (PENS)</p>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Mengembangkan program kontroler Arduino untuk pengolahan sinyal saklar digital dan pengendalian counter display 7-segment. Menguji stabilitas input serta waktu eksekusi kode firmware.
+            </p>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 relative pl-8 sm:pl-10">
+            <div class="absolute left-3.5 sm:left-4 top-7 w-2.5 h-2.5 rounded-full bg-purple-400 ring-4 ring-slate-900"></div>
+            
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <h3 class="text-base font-bold text-white">Perancangan Sirkuit Elektronika & Transmisi Telekomunikasi</h3>
+              <span class="text-xs font-mono text-slate-400 px-2 py-0.5 rounded bg-slate-800">Proyek Semester Praktikum</span>
+            </div>
+            <p class="text-xs text-slate-400 mb-2">Politeknik Elektronika Negeri Surabaya (PENS)</p>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Membangun simulasi pada software NI Multisim dan merakit prototipe fisik transmisi audio nirkabel berbasis induksi magnetik serta modul display logic pada breadboard.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="py-20 border-b border-slate-800/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-2 text-brand-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            <span>05. Pendidikan</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Latar Belakang Pendidikan</h2>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-slate-800 max-w-4xl relative overflow-hidden">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 border-b border-slate-800 pb-6 mb-6">
+            <div>
+              <span class="text-xs font-mono text-brand-400 block mb-1">Program Diploma (D3)</span>
+              <h3 class="text-xl font-bold text-white">Teknik Telekomunikasi</h3>
+              <p class="text-slate-300 font-medium text-sm mt-0.5">Politeknik Elektronika Negeri Surabaya (PENS)</p>
+            </div>
+            <div class="sm:text-right">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400"></i> Surabaya, Indonesia
+              </span>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-sm text-slate-300 leading-relaxed">
+            <p>
+              Menempuh studi teknik dengan penekanan kuat pada praktikum laboratorium, rekayasa perangkat keras dan lunak, serta pemahaman alur data dalam jaringan.
+            </p>
+            
+            <div class="pt-2">
+              <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2">Fokus Kompetensi yang Dibangun:</h4>
+              <ul class="grid sm:grid-cols-2 gap-2 text-xs text-slate-300">
+                <li class="flex items-center gap-2 p-2 rounded bg-slate-950/60 border border-slate-800">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 flex-shrink-0"></i>
+                  <span>Logika algoritma & rekayasa perangkat lunak</span>
+                </li>
+                <li class="flex items-center gap-2 p-2 rounded bg-slate-950/60 border border-slate-800">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 flex-shrink-0"></i>
+                  <span>Sistem mikrokontroler & antarmuka sinyal digital</span>
+                </li>
+                <li class="flex items-center gap-2 p-2 rounded bg-slate-950/60 border border-slate-800">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 flex-shrink-0"></i>
+                  <span>Analisis aliran data dan pemecahan masalah teknis</span>
+                </li>
+                <li class="flex items-center gap-2 p-2 rounded bg-slate-950/60 border border-slate-800">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-400 flex-shrink-0"></i>
+                  <span>Kedisiplinan pengujian dan dokumentasi proyek</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <div class="flex items-center gap-2 text-brand-400 text-xs font-mono font-semibold uppercase tracking-wider mb-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>06. Kontak</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Mari Terhubung</h2>
+          <p class="text-slate-400 text-sm mt-1">Saya terbuka untuk kesempatan magang (internship) maupun posisi junior/entry-level sebagai Software Engineer / Backend Developer.</p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+          
+          <!-- Contact Cards -->
+          <div class="md:col-span-5 space-y-4">
+            
+            <!-- Email Card -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
+              <span class="text-xs font-mono text-slate-400">Email Utama</span>
+              <div class="text-white font-medium text-sm sm:text-base break-all flex items-center justify-between gap-2">
+                <span>zerlindah123@gmail.com</span>
+              </div>
+              <div class="flex items-center gap-2 pt-2">
+                <a href="mailto:zerlindah123@gmail.com" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-xs font-semibold transition-all">
+                  <i data-lucide="mail" class="w-3.5 h-3.5"></i> Kirim Email
+                </a>
+                <button id="copy-email-contact-btn" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium border border-slate-700 transition-all">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i> <span id="copy-btn-text">Salin Email</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Profile Info Card -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3 text-xs sm:text-sm text-slate-300">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="user-check" class="w-4 h-4 text-brand-400 flex-shrink-0"></i>
+                <span>Erina Zerlindah</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="building-2" class="w-4 h-4 text-brand-400 flex-shrink-0"></i>
+                <span>Politeknik Elektronika Negeri Surabaya (PENS)</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="map-pin" class="w-4 h-4 text-brand-400 flex-shrink-0"></i>
+                <span>Surabaya, Jawa Timur, Indonesia</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+              <span class="text-xs font-mono text-slate-400 block">Tautan Profesional:</span>
+              <div class="flex flex-col gap-2">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/60 hover:bg-slate-800/80 border border-slate-800 text-xs text-slate-300 transition-all group">
+                  <span class="flex items-center gap-2">
+                    <i data-lucide="github" class="w-4 h-4 text-white"></i>
+                    <span>GitHub Profile</span>
+                  </span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-brand-400"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/60 hover:bg-slate-800/80 border border-slate-800 text-xs text-slate-300 transition-all group">
+                  <span class="flex items-center gap-2">
+                    <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i>
+                    <span>LinkedIn Profile</span>
+                  </span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-slate-500 group-hover:text-brand-400"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Message Box -->
+          <div class="md:col-span-7 bg-slate-900/90 rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-4">
+            <h3 class="text-lg font-bold text-white">Kirim Pesan Cepat</h3>
+            <p class="text-xs text-slate-400">
+              Formulir ini akan otomatis membuka aplikasi email Anda dengan tujuan langsung ke <strong>zerlindah123@gmail.com</strong>.
+            </p>
+
+            <form id="contact-form" class="space-y-4 text-xs sm:text-sm">
+              <div class="space-y-1.5">
+                <label for="sender-name" class="text-slate-300 font-medium">Nama Anda / Perusahaan</label>
+                <input 
+                  type="text" 
+                  id="sender-name" 
+                  required 
+                  placeholder="Contoh: HR Manager / Recruiter"
+                  class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-400 text-xs sm:text-sm"
+                >
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="sender-subject" class="text-slate-300 font-medium">Subjek</label>
+                <input 
+                  type="text" 
+                  id="sender-subject" 
+                  required 
+                  placeholder="Peluang Kerja / Diskusi Proyek Software Engineer"
+                  class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-400 text-xs sm:text-sm"
+                >
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="sender-message" class="text-slate-300 font-medium">Pesan</label>
+                <textarea 
+                  id="sender-message" 
+                  rows="4" 
+                  required 
+                  placeholder="Tuliskan pesan atau detail penawaran kerja Anda di sini..."
+                  class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-lg text-white focus:outline-none focus:border-brand-400 text-xs sm:text-sm"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full py-3 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-lg text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Kirim via Email
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-300">Erina Zerlindah</span>
+        <span>•</span>
+        <span>D3 Teknik Telekomunikasi PENS</span>
+      </div>
+      <div>
+        <span>Dibuat untuk kebutuhan profesional Software Engineer.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification for Copy Email -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="px-4 py-2.5 rounded-lg bg-emerald-500 text-white text-xs font-medium shadow-xl flex items-center gap-2">
+      <i data-lucide="check-circle" class="w-4 h-4"></i>
+      <span>Email berhasil disalin ke clipboard!</span>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
